@@ -1,2 +1,2 @@
 # spring-demo
-An Spring demo project
+A Spring demo project
