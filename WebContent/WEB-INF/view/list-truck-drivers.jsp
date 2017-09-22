@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Listagem de pipeiros</title>
+<title>CRM - Gerenciador de Pipeiros</title>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
 </head>

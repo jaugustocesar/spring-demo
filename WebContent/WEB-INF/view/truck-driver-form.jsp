@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Listagem de pipeiros</title>
+	<title>CRM - Gerenciador de Pipeiros</title>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/style.css" />
 </head>
@@ -14,7 +14,7 @@
 			<div class="col-sm-12">
 				<div class="header row">
 					<div class="col-sm-12">
-						<h2>Tomus - CRM - Formulário de Pipeiro</h2>
+						<h2>CRM - Formulário de Pipeiro</h2>
 					</div>
 				</div>
 				
