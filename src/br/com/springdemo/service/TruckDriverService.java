@@ -10,8 +10,8 @@ public interface TruckDriverService {
 
 	public void saveTruckDriver(TruckDriver truckDriver);
 
-	public TruckDriver getTruckDriver(String documentID);
+	public TruckDriver getTruckDriver(int id);
 
-	public void deleteTruckDriver(String documentID);
+	public void deleteTruckDriver(int id);
 
 }

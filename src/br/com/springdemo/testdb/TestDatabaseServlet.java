@@ -27,7 +27,7 @@ public class TestDatabaseServlet extends HttpServlet {
 		
 		String user = "root";
 		String pass = "";
-		String jdbcUrl = "jdbc:mysql://localhost:3306/spring_demo_tomus?useSSL=false";
+		String jdbcUrl = "jdbc:mysql://localhost:3306/spring_demo?useSSL=false";
 
 		try {
 			PrintWriter out = response.getWriter();

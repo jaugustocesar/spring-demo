@@ -27,21 +27,25 @@ public class TruckDriverDAOImpl implements TruckDriverDAO {
 	@Override
 	public void saveTruckDriver(TruckDriver truckDriver) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
-		currentSession.saveOrUpdate(truckDriver);
+		if (truckDriver.getId() != 0) {
+			currentSession.update(truckDriver);
+		} else {
+			currentSession.save(truckDriver);
+		}
 	}
 
 	@Override
-	public TruckDriver getTruckDriver(String documentID) {
+	public TruckDriver getTruckDriver(int id) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
-		TruckDriver truckDriver = currentSession.get(TruckDriver.class, documentID);
+		TruckDriver truckDriver = currentSession.get(TruckDriver.class, id);
 		return truckDriver;
 	}
 
 	@Override
-	public void deleteTruckDriver(String documentID) {
+	public void deleteTruckDriver(int id) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
-		Query<?> query = currentSession.createQuery("delete from TruckDriver where id=:documentID");
-		query.setParameter("documentID", documentID);
+		Query<?> query = currentSession.createQuery("delete from TruckDriver where id=:idTruckDriver");
+		query.setParameter("idTruckDriver", id);
 		query.executeUpdate();
 	}
 

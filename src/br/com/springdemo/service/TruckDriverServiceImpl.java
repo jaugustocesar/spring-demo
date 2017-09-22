@@ -29,14 +29,14 @@ public class TruckDriverServiceImpl implements TruckDriverService {
 
 	@Override
 	@Transactional
-	public TruckDriver getTruckDriver(String documentID) {
-		return this.truckDriverDAO.getTruckDriver(documentID);
+	public TruckDriver getTruckDriver(int id) {
+		return this.truckDriverDAO.getTruckDriver(id);
 	}
 
 	@Override
 	@Transactional
-	public void deleteTruckDriver(String documentID) {
-		this.truckDriverDAO.deleteTruckDriver(documentID);
+	public void deleteTruckDriver(int id) {
+		this.truckDriverDAO.deleteTruckDriver(id);
 	}
 
 }

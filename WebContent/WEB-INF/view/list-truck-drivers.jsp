@@ -14,7 +14,7 @@
 			<div class="col-sm-12">
 				<div class="row">
 					<div class="col-sm-8">
-						<h2>Tomus - CRM - Gerenciador de Pipeiros</h2>
+						<h2>CRM - Gerenciador de Pipeiros</h2>
 					</div>
 					<div class="col-sm-4" style="text-align: right; margin-top: 24px;">
 						<a class="btn btn-primary" href="driver-form" role="button">Cadastrar</a>
@@ -28,8 +28,7 @@
 							<th>E-mail</th>
 							<th>Placa</th>
 							<th>Fone</th>
-							<th>Criado em</th>
-							<th>Modificado em</th>
+							<th>Última modificação</th>
 							<th>Ações</th>
 						</tr>
 					</thead>
@@ -38,12 +37,12 @@
 						<c:forEach var="truckDriver" items="${truckDrivers}">
 							<c:url var="updateLink"
 								value="/truckdriver/update-driver-form">
-								<c:param name="documentID" value="${truckDriver.documentID}"></c:param>
+								<c:param name="id" value="${truckDriver.id}"></c:param>
 							</c:url>
 							
 							<c:url var="deleteLink"
 								value="/truckdriver/delete-driver">
-								<c:param name="documentID" value="${truckDriver.documentID}"></c:param>
+								<c:param name="id" value="${truckDriver.id}"></c:param>
 							</c:url>
 							
 							<tr>
@@ -52,8 +51,7 @@
 								<td>${truckDriver.email}</td>
 								<td>${truckDriver.licencePlate}</td>
 								<td>${truckDriver.phoneNumber}</td>
-								<td>${truckDriver.createdAt}</td>
-								<td>${truckDriver.updatedAt}</td>
+								<td>${truckDriver.modified}</td>
 								<td>
 									<a href="${updateLink}" class="btn btn-primary btn-sm" style="line-height: 1.0;">Editar</a>
 									<a href="${deleteLink}" onclick="if(!(confirm('Tem certeza que deseja remover este registro?'))) return false;"
