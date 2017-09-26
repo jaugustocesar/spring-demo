@@ -8,8 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "truck_driver")
@@ -21,26 +22,31 @@ public class TruckDriver {
 	private int id;
 
 	@Column(name = "name")
-	@NotEmpty(message="campo obrigatório")
+	@NotNull(message="campo obrigatório")
+	@Size(min=1, message="campo obrigatório")
 	private String name;
 	
 	@Column(name = "document_id")
-	@NotEmpty(message="campo obrigatório")
+	@NotNull(message="campo obrigatório")
+	@Size(min=1, message="campo obrigatório")
 	@Pattern(regexp="[0-9]{11}", message="CPF inválido")
 	private String documentID; // CPF
 	
 	@Column(name = "email")
-	@NotEmpty(message="campo obrigatório")
+	@NotNull(message="campo obrigatório")
+	@Size(min=1, message="campo obrigatório")
 	@Pattern(regexp=".+@.+\\..+", message="e-mail inválido")
 	private String email;
 
 	@Column(name = "licence_plate")
-	@NotEmpty(message="campo obrigatório")
+	@NotNull(message="campo obrigatório")
+	@Size(min=1, message="campo obrigatório")
 	@Pattern(regexp="\\w{3}\\d{4}", message="placa do veículo inválida")
 	private String licencePlate;
 
 	@Column(name = "phone")
-	@NotEmpty(message="campo obrigatório")
+	@NotNull(message="campo obrigatório")
+	@Size(min=1, message="campo obrigatório")
 	private String phoneNumber;
 
 	@Column(name = "modified")

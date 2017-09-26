@@ -30,19 +30,19 @@
 					
 					<div class="form-group">
 						<label class="form-control-label" for="documentIDInput">CPF</label>
-						<form:input path="documentID" class="form-control" id="documentIDInput" />
+						<form:input path="documentID" class="form-control" id="documentIDInput" minlength="11" maxlength="11" />
 						<form:errors path="documentID" cssClass="error" />
 					</div>
 					
 					<div class="form-group">
 						<label class="form-control-label" for="emailInput">E-mail</label>
-						<form:input path="email" class="form-control" id="emailInput" type="email" />
+						<form:input path="email" class="form-control" id="emailInput" type="email" style="text-transform:lowercase" />
 						<form:errors path="email" cssClass="error" />
 					</div>
 					
 					<div class="form-group">
 						<label class="form-control-label" for="plateInput">Placa do caminhão</label>
-						<form:input path="licencePlate" class="form-control" id="plateInput" />
+						<form:input path="licencePlate" class="form-control" id="plateInput" minlength="7" maxlength="7" />
 						<form:errors path="licencePlate" cssClass="error" />
 					</div>
 					
