@@ -17,11 +17,15 @@
 	<mvc:annotation-driven />
 
 	<mvc:resources location="/assets/" mapping="/assets/**" />
-
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
 		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames" value="resources/messages" />
 	</bean>
 
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
