@@ -1,5 +1,4 @@
 build
 .settings
 .project
-WebContent/WEB-INF/lib/**
 /target/
