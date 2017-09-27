@@ -24,6 +24,7 @@
 					<thead>
 						<tr>
 							<th>CPF</th>
+							<th>Código motorista</th>
 							<th>Nome</th>
 							<th>E-mail</th>
 							<th>Placa</th>
@@ -47,6 +48,7 @@
 							
 							<tr>
 								<td>${truckDriver.documentID}</td>
+								<td>${truckDriver.code}</td>
 								<td>${truckDriver.name}</td>
 								<td>${truckDriver.email}</td>
 								<td>${truckDriver.licencePlate}</td>

@@ -12,6 +12,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import br.com.springdemo.validation.TruckDriverCode;
+
 @Entity
 @Table(name = "truck_driver")
 public class TruckDriver {
@@ -48,6 +50,12 @@ public class TruckDriver {
 	@NotNull(message="campo obrigatório")
 	@Size(min=1, message="campo obrigatório")
 	private String phoneNumber;
+	
+	@Column(name = "code")
+	@NotNull(message="campo obrigatório")
+	@Size(min=1, message="campo obrigatório")
+	@TruckDriverCode
+	private String code;
 
 	@Column(name = "modified")
 	private Timestamp modified;
@@ -104,6 +112,14 @@ public class TruckDriver {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public Timestamp getModified() {
 		return modified;
 	}
@@ -115,7 +131,8 @@ public class TruckDriver {
 	@Override
 	public String toString() {
 		return "TruckDriver [id=" + id + ", name=" + name + ", documentID=" + documentID + ", email=" + email
-				+ ", licencePlate=" + licencePlate + ", phoneNumber=" + phoneNumber + ", modified=" + modified + "]";
+				+ ", licencePlate=" + licencePlate + ", phoneNumber=" + phoneNumber + ", code=" + code + ", modified="
+				+ modified + "]";
 	}
 
 }

@@ -35,6 +35,12 @@
 					</div>
 					
 					<div class="form-group">
+						<label class="form-control-label" for="truckDriverCode">Código do motorista</label>
+						<form:input path="code" class="form-control" id="truckDriverCode" minlength="6" maxlength="6" />
+						<form:errors path="code" cssClass="error" />
+					</div>
+					
+					<div class="form-group">
 						<label class="form-control-label" for="emailInput">E-mail</label>
 						<form:input path="email" class="form-control" id="emailInput" type="email" style="text-transform:lowercase" />
 						<form:errors path="email" cssClass="error" />
