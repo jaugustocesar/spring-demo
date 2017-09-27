@@ -20,8 +20,6 @@
 				
 				<form:form action="save-truck-driver" modelAttribute="truckDriver" method="POST">
 				
-					<form:hidden path="id" />
-					
 					<div class="form-group">
 						<label class="form-control-label" for="nameInput">Nome</label>
 						<form:input path="name" class="form-control" id="nameInput" />
@@ -56,6 +54,11 @@
 						<label class="form-control-label" for="phoneInput">Fone</label>
 						<form:input path="phoneNumber" class="form-control" id="phoneInput" type="tel" />
 						<form:errors path="phoneNumber" cssClass="error" />
+					</div>
+					
+					<div class="form-group">
+						<form:hidden path="id" />
+						<form:errors path="id" cssClass="error" />
 					</div>
 					
 					<button type="submit" class="btn btn-primary">Salvar</button>

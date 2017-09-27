@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import br.com.springdemo.validation.CPF;
 import br.com.springdemo.validation.TruckDriverCode;
 
 @Entity
@@ -32,6 +33,7 @@ public class TruckDriver {
 	@NotNull(message="campo obrigatório")
 	@Size(min=1, message="campo obrigatório")
 	@Pattern(regexp="[0-9]{11}", message="CPF inválido")
+	@CPF
 	private String documentID; // CPF
 	
 	@Column(name = "email")

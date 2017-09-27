@@ -58,7 +58,7 @@ public class TruckDriverController {
 				truckDriver.setModified(this.getCurrentTimestamp());
 				this.truckDriverService.saveTruckDriver(truckDriver);
 			} catch (ConstraintViolationException e) {
-				bindingResult.rejectValue("phoneNumber", "duplicatedError",
+				bindingResult.rejectValue("id", "duplicatedError",
 						"Já existe um cadastro contendo um dos campos informados, favor verificar.");
 				return "truck-driver-form";
 			}

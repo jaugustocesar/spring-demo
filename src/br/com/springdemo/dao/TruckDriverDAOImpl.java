@@ -27,7 +27,7 @@ public class TruckDriverDAOImpl implements TruckDriverDAO {
 	@Override
 	public void saveTruckDriver(TruckDriver truckDriver) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
-		if (truckDriver.getId() != 0) {
+		if (truckDriver.getId() > 0) {
 			currentSession.update(truckDriver);
 		} else {
 			currentSession.save(truckDriver);
