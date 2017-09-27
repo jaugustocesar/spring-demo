@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 
 public class TruckDriverCodeConstraintValidator implements ConstraintValidator<TruckDriverCode, String> {
 
-	private String truckDriverPrefix;
+	private String[] truckDriverPrefix;
 
 	@Override
 	public void initialize(TruckDriverCode truckDriverPrefix) {
@@ -14,7 +14,16 @@ public class TruckDriverCodeConstraintValidator implements ConstraintValidator<T
 
 	@Override
 	public boolean isValid(String truckDriverCode, ConstraintValidatorContext constraintValidatorContext) {
-		return truckDriverCode != null && truckDriverCode.startsWith(this.truckDriverPrefix);
+		boolean result = false;
+		if (truckDriverCode != null) {
+			for (String code : this.truckDriverPrefix) {
+				result = truckDriverCode.startsWith(code);
+				if (result) {
+					break;
+				}
+			}
+		}
+		return result;
 	}
 
 }

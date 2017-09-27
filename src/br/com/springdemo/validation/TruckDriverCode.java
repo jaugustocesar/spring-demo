@@ -13,7 +13,7 @@ import javax.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TruckDriverCode {
 	
-	public String value() default "PE";
+	public String[] value() default {"PE"};
 	
 	public String message() default "este campo deve iniciar com o prefixo 'PE'";
 	
