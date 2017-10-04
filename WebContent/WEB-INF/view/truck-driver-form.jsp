@@ -9,7 +9,7 @@
 
 <body>
 
-	<div class="container">
+	<div class="container" style="margin-bottom:50px;">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="header row">
@@ -24,6 +24,12 @@
 						<label class="form-control-label" for="nameInput">Nome</label>
 						<form:input path="name" class="form-control" id="nameInput" />
 						<form:errors path="name" cssClass="error" />
+					</div>
+					
+					<div class="form-group">
+						<label class="form-control-label" for="dateOfBirthInput">Data de nascimento</label>
+						<form:input path="dateOfBirth" class="form-control" id="dateOfBirthInput" type="date" />
+						<form:errors path="dateOfBirth" cssClass="error" />
 					</div>
 					
 					<div class="form-group">

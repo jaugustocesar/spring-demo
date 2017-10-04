@@ -29,7 +29,7 @@ public class TruckDriverController {
 
 	@Autowired
 	private TruckDriverService truckDriverService;
-	
+
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -51,8 +51,9 @@ public class TruckDriverController {
 	}
 
 	@PostMapping("/save-truck-driver")
-	public String saveTruckDriver(@Valid @ModelAttribute("truckDriver") TruckDriver truckDriver, BindingResult bindingResult) {
-		
+	public String saveTruckDriver(@Valid @ModelAttribute("truckDriver") TruckDriver truckDriver,
+			BindingResult bindingResult) {
+
 		if (Boolean.FALSE.equals(bindingResult.hasErrors())) {
 			try {
 				truckDriver.setModified(this.getCurrentTimestamp());
@@ -78,11 +79,11 @@ public class TruckDriverController {
 		model.addAttribute("truckDriver", truckDriver);
 		return "truck-driver-form";
 	}
-	
+
 	@GetMapping("/delete-driver")
 	public String deleteDriver(@RequestParam("id") int id) {
 		truckDriverService.deleteTruckDriver(id);
 		return "redirect:/truckdriver/list";
 	}
-	
+
 }

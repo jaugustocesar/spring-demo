@@ -1,5 +1,6 @@
 package br.com.springdemo.entity;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -28,6 +29,9 @@ public class TruckDriver {
 	@NotNull(message="campo obrigatório")
 	@Size(min=1, message="campo obrigatório")
 	private String name;
+	
+	@Column(name = "date_of_birth")
+	private Date dateOfBirth;
 	
 	@Column(name = "document_id")
 	@NotNull(message="campo obrigatório")
@@ -63,7 +67,7 @@ public class TruckDriver {
 	private Timestamp modified;
 
 	public TruckDriver() {
-
+		
 	}
 	
 	public int getId() {
@@ -74,20 +78,28 @@ public class TruckDriver {
 		this.id = id;
 	}
 
-	public String getDocumentID() {
-		return documentID;
-	}
-
-	public void setDocumentID(String documentID) {
-		this.documentID = documentID;
-	}
-
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getDocumentID() {
+		return documentID;
+	}
+
+	public void setDocumentID(String documentID) {
+		this.documentID = documentID;
 	}
 
 	public String getEmail() {
@@ -132,9 +144,9 @@ public class TruckDriver {
 
 	@Override
 	public String toString() {
-		return "TruckDriver [id=" + id + ", name=" + name + ", documentID=" + documentID + ", email=" + email
-				+ ", licencePlate=" + licencePlate + ", phoneNumber=" + phoneNumber + ", code=" + code + ", modified="
-				+ modified + "]";
+		return "TruckDriver [id=" + id + ", name=" + name + ", dateOfBirth=" + dateOfBirth + ", documentID="
+				+ documentID + ", email=" + email + ", licencePlate=" + licencePlate + ", phoneNumber=" + phoneNumber
+				+ ", code=" + code + ", modified=" + modified + "]";
 	}
 
 }
